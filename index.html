@@ -190,7 +190,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 64px;height:68px;d
 
 /* ── FOOTER ── */
 footer{
-  border-top:1px solid var(--border);
+  border-top:none;
   padding:0;
   display:flex;
   flex-direction:column;
@@ -198,7 +198,8 @@ footer{
   color:var(--text3);
   position:relative;
   overflow:hidden;
-  background:#e8f5e0;
+  background:#b8dba0;
+  margin-top:0;
 }
 footer a{color:var(--text3);text-decoration:none;transition:color .2s}
 footer a:hover{color:var(--accent)}
@@ -206,110 +207,52 @@ footer a:hover{color:var(--accent)}
 .footer-scene{
   position:relative;
   width:100%;
-  height:220px;
+  height:260px;
   overflow:hidden;
 }
 
-/* Grass BG Lottie fills the scene */
+/* Grass BG Lottie — force full width fill */
 #lottie-grass{
   position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-}
-
-/* House */
-.footer-house{
-  position:absolute;
-  bottom:52px;
-  left:80px;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-.house-body{
-  width:100px;height:66px;
-  background:#f5e6d0;
-  border:2px solid #c4a882;
-  border-radius:4px 4px 0 0;
-  position:relative;
-}
-.house-roof{
-  width:0;height:0;
-  border-left:58px solid transparent;
-  border-right:58px solid transparent;
-  border-bottom:40px solid #c4622d;
-  position:absolute;top:-40px;left:-2px;
-}
-.house-chimney{
-  position:absolute;top:-62px;right:16px;
-  width:12px;height:26px;
-  background:#9a9080;border:1.5px solid #7a7060;
-}
-.house-door{
-  position:absolute;bottom:0;left:50%;
+  top:0;
+  left:50%;
   transform:translateX(-50%);
-  width:24px;height:34px;
-  background:#8b5e3c;
-  border-radius:12px 12px 0 0;
-  border:1.5px solid #6b4428;
+  width:100%;
+  min-width:100%;
+  height:100%;
 }
-.house-door-knob{
-  position:absolute;right:5px;top:50%;
-  width:4px;height:4px;
-  background:#d4a853;border-radius:50%;
+#lottie-grass svg{
+  width:100% !important;
+  height:100% !important;
 }
-.house-window{
-  position:absolute;top:12px;
-  width:20px;height:18px;
-  background:#a8d4e8;
-  border:2px solid #c4a882;border-radius:2px;
-}
-.house-window-left{left:10px}
-.house-window-right{right:10px}
-.house-window::after{content:'';position:absolute;inset:2px;background:linear-gradient(135deg,rgba(255,255,255,.6) 0%,transparent 60%)}
-.house-name{
-  font-size:10px;font-weight:700;
-  color:var(--accent);letter-spacing:.1em;
-  text-transform:uppercase;margin-top:3px;
-}
-/* Smoke */
-.smoke{position:absolute;right:16px;top:-82px;display:flex;flex-direction:column;gap:2px;align-items:center}
-.smoke-puff{width:7px;height:7px;background:rgba(180,180,180,.5);border-radius:50%;animation:smokePuff 2.5s ease-in-out infinite}
-.smoke-puff:nth-child(1){animation-delay:0s;width:5px;height:5px}
-.smoke-puff:nth-child(2){animation-delay:.4s;width:8px;height:8px}
-.smoke-puff:nth-child(3){animation-delay:.8s;width:10px;height:10px}
-@keyframes smokePuff{0%{opacity:0;transform:translateY(0) scale(.5)}30%{opacity:.7}100%{opacity:0;transform:translateY(-24px) scale(1.8)}}
 
-/* Two cat Lottie containers */
+/* Two cat Lottie containers — sit on the ground */
 .lottie-cat{
   position:absolute;
-  bottom:40px;
+  bottom:0;
   z-index:3;
 }
-#lottie-cat-sitting{width:160px;height:120px;left:210px}
-#lottie-cat-playing{width:240px;height:140px;right:160px}
+#lottie-cat-sitting{width:140px;height:140px;left:12%}
+#lottie-cat-playing{width:220px;height:160px;right:10%}
 
 .footer-bar{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:16px 64px;
+  padding:14px 64px;
   position:relative;
   z-index:4;
-  background:rgba(255,255,255,0.7);
+  background:rgba(184,219,160,0.9);
   backdrop-filter:blur(8px);
   border-top:1px solid rgba(0,0,0,0.06);
+  font-size:13px;
 }
 
 @media(max-width:768px){
-  .footer-scene{height:160px}
-  .footer-house{left:16px}
-  #lottie-cat-sitting{width:100px;height:80px;left:140px}
-  #lottie-cat-playing{width:160px;height:100px;right:20px}
-  .footer-bar{padding:14px 20px;flex-direction:column;gap:5px;text-align:center}
+  .footer-scene{height:180px}
+  #lottie-cat-sitting{width:90px;height:90px;left:5%}
+  #lottie-cat-playing{width:140px;height:110px;right:5%}
+  .footer-bar{padding:12px 20px;flex-direction:column;gap:5px;text-align:center}
 }
 
 /* ── ANIMATIONS ── */
@@ -768,26 +711,8 @@ footer a:hover{color:var(--accent)}
 
   <div class="footer-scene" id="footerScene">
 
-    <!-- Grass field background Lottie -->
+    <!-- Grass field background Lottie — full scene with sky, clouds, trees -->
     <div id="lottie-grass"></div>
-
-    <!-- Bluebell's house -->
-    <div class="footer-house">
-      <div class="house-body">
-        <div class="house-roof"></div>
-        <div class="house-chimney">
-          <div class="smoke">
-            <div class="smoke-puff"></div>
-            <div class="smoke-puff"></div>
-            <div class="smoke-puff"></div>
-          </div>
-        </div>
-        <div class="house-window house-window-left"></div>
-        <div class="house-window house-window-right"></div>
-        <div class="house-door"><div class="house-door-knob"></div></div>
-      </div>
-      <div class="house-name">Bluebell</div>
-    </div>
 
     <!-- Cat sitting (left) -->
     <div class="lottie-cat" id="lottie-cat-sitting"></div>
@@ -906,29 +831,47 @@ window.addEventListener('scroll', () => {
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';
     script.onload = function() {
-      // Grass field as full background
-      lottie.loadAnimation({
+      // Grass field — full background, stretch to fill
+      const grassAnim = lottie.loadAnimation({
         container: document.getElementById('lottie-grass'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'grass_field.json'
+        path: 'grass_field.json',
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
       });
-      // Cat sitting (left of house)
+      // Force grass SVG to fill container
+      grassAnim.addEventListener('DOMLoaded', () => {
+        const svg = document.querySelector('#lottie-grass svg');
+        if (svg) {
+          svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+          svg.style.width = '100%';
+          svg.style.height = '100%';
+          svg.style.position = 'absolute';
+          svg.style.inset = '0';
+        }
+      });
+
+      // Cat sitting (left)
       lottie.loadAnimation({
         container: document.getElementById('lottie-cat-sitting'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'cat_sitting.json'
+        path: 'cat_sitting.json',
+        rendererSettings: { preserveAspectRatio: 'xMidYMax meet' }
       });
-      // Cat playing (right side)
+
+      // Cat playing (right)
       lottie.loadAnimation({
         container: document.getElementById('lottie-cat-playing'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'cat_playing.json'
+        path: 'cat_playing.json',
+        rendererSettings: { preserveAspectRatio: 'xMidYMax meet' }
       });
     };
     document.head.appendChild(script);
