@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tata Communications — Case Study · Tanya Panchal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#fdfcfa;--bg2:#f7f4ef;--bg3:#ede9e1;--white:#fff;--border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.13);--text:#18160f;--text2:#6b6455;--text3:#b0a898;--accent:#c4622d;--accent-light:#fdf0e8;--green:#2d6a4f;--green-light:#e8f5ee;--sans:'Inter',system-ui,sans-serif;--serif:'Playfair Display',Georgia,serif;--sh-sm:0 2px 8px rgba(0,0,0,.06);--sh-md:0 8px 32px rgba(0,0,0,.08);--sh-lg:0 24px 64px rgba(0,0,0,.12)}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{position:sticky;top:0;z-index:100;background:rgba(253,252,250,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 64px;height:64px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--sh-sm)}
+.nav-logo{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--text);text-decoration:none;letter-spacing:-.02em}.nav-logo span{color:var(--accent);font-style:italic}
+.nav-back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--text2);text-decoration:none;padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--white);transition:all .18s}.nav-back:hover{background:var(--bg2);color:var(--text)}.nav-back svg{width:15px;height:15px;flex-shrink:0}
+.page{max-width:1100px;margin:0 auto;padding:0 64px 120px}
+.hero{padding:80px 0 64px;animation:fadeUp .7s cubic-bezier(.22,1,.36,1) both}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}.tag{font-size:12px;font-weight:500;padding:5px 14px;border-radius:100px;background:var(--accent-light);color:var(--accent)}.tag.green{background:var(--green-light);color:var(--green)}.tag.neutral{background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+h1{font-family:var(--serif);font-size:clamp(44px,5.5vw,76px);font-weight:400;line-height:1.05;letter-spacing:-.03em;color:var(--text);margin-bottom:24px}h1 em{font-style:italic;color:var(--accent)}
+.subtitle{font-size:18px;color:var(--text2);line-height:1.78;max-width:660px;font-weight:300;margin-bottom:52px}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:72px}
+.meta-item{background:var(--white);padding:22px 28px}.meta-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}.meta-value{font-size:15px;font-weight:500;color:var(--text)}
+.cover{width:100%;aspect-ratio:16/7;border-radius:28px;margin-bottom:88px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);overflow:hidden;position:relative;font-size:100px}
+.cover-label{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:13px;color:rgba(255,255,255,.6);background:rgba(0,0,0,.32);padding:8px 20px;border-radius:100px;white-space:nowrap;backdrop-filter:blur(10px)}
+.section{margin-bottom:88px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:22px}.eyebrow::after{content:'';flex:1;height:1px;background:var(--border)}
+h2{font-family:var(--serif);font-size:38px;font-weight:400;letter-spacing:-.02em;color:var(--text);margin-bottom:14px;line-height:1.18}h2 em{font-style:italic;color:var(--accent)}
+.body-text{font-size:16px;color:var(--text2);line-height:1.88;font-weight:300}.body-text p{margin-bottom:16px}.body-text p:last-child{margin-bottom:0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}.info-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:var(--sh-sm);transition:all .25s}.info-card:hover{box-shadow:var(--sh-md);transform:translateY(-2px)}.info-icon{font-size:26px;margin-bottom:12px}.info-title{font-size:12px;font-weight:600;color:var(--text);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em}.info-body{font-size:14.5px;color:var(--text2);line-height:1.7;font-weight:300}
+.steps{display:flex;flex-direction:column;margin-top:28px}.step{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--border)}.step:last-child{border-bottom:none}.step-num{width:40px;height:40px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:var(--accent);flex-shrink:0;margin-top:2px}.step-title{font-size:15.5px;font-weight:500;color:var(--text);margin-bottom:6px}.step-body{font-size:14.5px;color:var(--text2);line-height:1.7;font-weight:300}
+.img-ph{width:100%;border-radius:18px;background:var(--bg2);border:2px dashed var(--border2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--text3);cursor:pointer;transition:all .2s}.img-ph:hover{background:var(--bg3)}.img-ph svg{width:26px;height:26px;opacity:.4}.img-ph span{font-size:13px}.img-ph.tall{aspect-ratio:16/9;margin:28px 0}.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}.img-grid .img-ph{aspect-ratio:4/3;margin:0}
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}.result{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:28px 22px;text-align:center;box-shadow:var(--sh-sm)}.result.hl{background:var(--accent);border-color:var(--accent)}.result-num{font-family:var(--serif);font-size:32px;font-weight:400;color:var(--text);letter-spacing:-.02em;margin-bottom:6px}.result.hl .result-num{color:white}.result-label{font-size:13px;color:var(--text3);line-height:1.55}.result.hl .result-label{color:rgba(255,255,255,.55)}
+.learnings{display:flex;flex-direction:column;gap:12px;margin-top:24px}.learning{display:flex;align-items:flex-start;gap:14px;padding:20px 22px;background:var(--white);border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh-sm)}.learn-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px}.learn-text{font-size:14.5px;color:var(--text2);line-height:1.7;font-weight:300}
+.next-card,.back-card{background:var(--white);border:1px solid var(--border);border-radius:24px;padding:44px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--sh-sm);text-decoration:none;color:inherit;transition:all .3s cubic-bezier(.22,1,.36,1);margin-top:100px}.next-card:hover,.back-card:hover{box-shadow:var(--sh-lg);transform:translateY(-4px)}.next-label,.back-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:8px}.next-title,.back-title{font-family:var(--serif);font-size:26px;font-weight:400;color:var(--text)}.next-arrow,.back-arrow{width:52px;height:52px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s}.next-arrow svg,.back-arrow svg{width:18px;height:18px}.next-card:hover .next-arrow,.back-card:hover .back-arrow{background:var(--accent);color:white}
+footer{border-top:1px solid var(--border);padding:28px 64px;display:flex;align-items:center;justify-content:space-between;font-size:13.5px;color:var(--text3)}footer a{color:var(--text3);text-decoration:none}footer a:hover{color:var(--accent)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}.reveal.visible{opacity:1;transform:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media(max-width:1024px){nav{padding:0 32px}.page{padding:0 32px 100px}footer{padding:24px 32px}}
+@media(max-width:768px){nav{padding:0 20px}.page{padding:0 20px 80px}footer{padding:20px;flex-direction:column;gap:6px;text-align:center}.meta{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}.results{grid-template-columns:1fr 1fr}.img-grid{grid-template-columns:1fr}.next-card,.back-card{flex-direction:column;align-items:flex-start;gap:20px;padding:32px}}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:var(--bg3);border-radius:3px}::selection{background:var(--accent-light);color:var(--accent)}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="tanya-portfolio.html">Tanya<span>.</span></a>
+  <a class="nav-back" href="tanya-portfolio.html#projects">
+    <svg viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 7.5H2M7 3L2 7.5 7 12"/></svg>
+    Back to work
+  </a>
+</nav>
+<div class="page">
+  <div class="hero">
+    <div class="tags"><span class="tag">Telecom · Enterprise</span><span class="tag neutral">Retainer · Schbang</span></div>
+    <h1>Tata Communications —<br><em>Website Revamp</em></h1>
+    <p class="subtitle">Full website revamp for one of India's largest telecom enterprises — UX research, 20+ web pages designed, and a reusable component library with complete documentation.</p>
+    <div class="meta">
+      <div class="meta-item"><div class="meta-label">Year</div><div class="meta-value">2025</div></div>
+      <div class="meta-item"><div class="meta-label">Role</div><div class="meta-value">UI/UX Designer</div></div>
+      <div class="meta-item"><div class="meta-label">Tools</div><div class="meta-value">Figma · Research</div></div>
+      <div class="meta-item"><div class="meta-label">Outcome</div><div class="meta-value">20+ pages built</div></div>
+    </div>
+  </div>
+  <div class="cover" style="background:linear-gradient(135deg,#c8e0d0,#eef5f0)">🌐<span class="cover-label">Add your project cover image here</span></div>
+
+  <div class="section reveal">
+    <div class="eyebrow">Overview</div>
+    <h2>The <em>challenge</em></h2>
+    <div class="body-text"><p>Tata Communications needed a complete website overhaul — modernising the design system, improving information architecture, and creating a scalable component library that the team could maintain and build on long-term.</p><p>The project required balancing enterprise brand standards with modern UX patterns, and delivering both the revamped pages and a documented component system for ongoing BAU tasks.</p></div>
+    <div class="two-col">
+      <div class="info-card"><div class="info-icon">🎯</div><div class="info-title">The Problem</div><div class="info-body">An outdated, inconsistent website with no reusable design system — making every new page slow to produce and visually inconsistent.</div></div>
+      <div class="info-card"><div class="info-icon">✅</div><div class="info-title">The Goal</div><div class="info-body">Deliver a full website revamp — research-backed IA, 20+ pages designed, and a documented component library to enable long-term scalability.</div></div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <div class="eyebrow">Process</div>
+    <h2>How I <em>approached</em> it</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">UX Research & Audit</div><div class="step-body">Audited the existing site — mapping every page, identifying IA problems, inconsistencies, and broken user journeys before proposing any solutions.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">Information Architecture</div><div class="step-body">Redesigned the full site structure — ensuring enterprise users could navigate complex service offerings without cognitive overload.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">Component Library</div><div class="step-body">Built a reusable component library with full documentation — buttons, cards, navigation patterns, form elements — so the team could produce future pages consistently.</div></div></div>
+      <div class="step"><div class="step-num">4</div><div><div class="step-title">20+ Page Designs</div><div class="step-body">Designed over 20 web pages end-to-end in Figma — from homepage and product pages to case studies and contact flows.</div></div></div>
+      <div class="step"><div class="step-num">5</div><div><div class="step-title">Ongoing BAU</div><div class="step-body">Supported ongoing BAU design tasks post-launch — maintaining design consistency and iterating on pages based on performance data.</div></div></div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <div class="eyebrow">Design</div>
+    <h2>Key <em>screens</em></h2>
+    <div class="img-ph tall"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>Add project cover / hero screenshot</span></div>
+    <div class="img-grid">
+      <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>Key screen 1</span></div>
+      <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>Key screen 2</span></div>
+      <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>Key screen 3</span></div>
+      <div class="img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg><span>Mobile / responsive</span></div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <div class="eyebrow">Results</div>
+    <h2>The <em>outcome</em></h2>
+    <div class="results">
+      <div class="result hl"><div class="result-num">20+</div><div class="result-label">Web pages designed from scratch</div></div>
+      <div class="result"><div class="result-num">1</div><div class="result-label">Full component library with documentation</div></div>
+      <div class="result"><div class="result-num">Retainer</div><div class="result-label">Ongoing BAU support post-launch</div></div>
+    </div>
+  </div>
+
+  <div class="section reveal">
+    <div class="eyebrow">Learnings</div>
+    <h2>What I <em>learned</em></h2>
+    <div class="learnings">
+      <div class="learning"><span class="learn-dot"></span><span class="learn-text">Enterprise design requires balancing brand heritage with modern UX — the visual language must feel familiar to existing users while attracting new ones.</span></div>
+      <div class="learning"><span class="learn-dot"></span><span class="learn-text">A component library is an investment, not just a deliverable — every hour spent building it saves ten hours on future pages and keeps the product consistent over time.</span></div>
+      <div class="learning"><span class="learn-dot"></span><span class="learn-text">Large organisations move slowly — being proactive about communicating design decisions and rationale keeps projects moving even when stakeholder availability is limited.</span></div>
+    </div>
+  </div>
+
+  <a class="next-card" href="tanya-lt.html">
+    <div>
+      <div class="next-card-label">Next project</div>
+      <div class="next-card-title">L&amp;T Realty — End-to-End Website Revamp</div>
+    </div>
+    <div class="next-card-arrow">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h12M10 4l5 5-5 5"/></svg>
+    </div>
+  </a>
+</div>
+<footer><span>© 2025 Tanya Panchal · UI/UX Designer · Mumbai</span><a href="tanya-portfolio.html">← Back to portfolio</a></footer>
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.classList.add('visible');obs.unobserve(el)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
